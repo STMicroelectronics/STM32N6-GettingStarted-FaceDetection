@@ -1,0 +1,1 @@
+# Release-STM32N6_GettingStarted_FaceDetection
