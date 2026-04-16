@@ -18,26 +18,26 @@
   */
 
 /*
- * GIT_SHA         "80369096c1c1b7ea4d6b2cc985d9e001f59b7c27"
- * GIT_BRANCH      "STAI-3.0"
- * GIT_DESCRIPTION "atonn-v1.1.3-8-g80369096"
+ * GIT_SHA         "7cc654104236b2ac726c804c5d7f201e2afd1c79"
+ * GIT_BRANCH      "STAI-4.0"
+ * GIT_DESCRIPTION "STAI-3.0.0-254-g7cc65410"
  *
  * Command Line options:
- * --load-mdesc-file = "/home/rattingu/st/stedgeai-linux-11.0.0-RC6/Utilities/configs/stm32n6"
- * --load-cdesc-file = "/home/rattingu/st/stedgeai-linux-11.0.0-RC6/Utilities/configs/cortex-m55"
- * --load-mpool-file = "/home/rattingu/Workspace/STM32N6_GettingStarted_FaceDetection/Model/my_mpools/stm32n6-app2_STM32N6570-DK"
+ * --load-mdesc-file = "/opt/ST/STEdgeAI/Utilities/configs/stm32n6"
+ * --load-cdesc-file = "/opt/ST/STEdgeAI/Utilities/configs/cortex-m55"
+ * --load-mpool-file = "/home/jenkins/agent/workspace/tarted_FaceDetection_ModelZoo_fd/Model/my_mpools/stm32n6-app2_STM32N6570-DK"
  * --cache-maintenance = true
  * --enable-virtual-mem-pools = true
  * --native-float = true
- * --json-quant-file = "/home/rattingu/Workspace/STM32N6_GettingStarted_FaceDetection/Model/st_ai_output/blazeface_front_128_quant_pc_ff_od_wider_face_OE_3_3_1_Q.json"
+ * --json-quant-file = "/home/jenkins/agent/workspace/tarted_FaceDetection_ModelZoo_fd/Model/st_ai_output/blazeface_front_128_quant_pc_ff_od_wider_face_OE_3_3_1_Q.json"
  * --optimization = 3
  * --Os = true
  * --Omax-ca-pipe = 4
  * --Ocache-opt = true
  * --enable-epoch-controller = true
  * --output-info-file = "c_info"
- * --onnx-input = "/home/rattingu/Workspace/STM32N6_GettingStarted_FaceDetection/Model/st_ai_output/blazeface_front_128_quant_pc_ff_od_wider_face_OE_3_3_1.onnx"
- * --out-dir-prefix = "/home/rattingu/Workspace/STM32N6_GettingStarted_FaceDetection/Model/st_ai_ws/neural_art__network/"
+ * --onnx-input = "/home/jenkins/agent/workspace/tarted_FaceDetection_ModelZoo_fd/Model/st_ai_output/blazeface_front_128_quant_pc_ff_od_wider_face_OE_3_3_1.onnx"
+ * --out-dir-prefix = "/home/jenkins/agent/workspace/tarted_FaceDetection_ModelZoo_fd/Model/st_ai_ws/neural_art__network/"
  * --network-name = "network"
  * --all-buffers-info = true
  * --generate-stai = true
@@ -55,7 +55,7 @@
 #include "ecloader.h"
 #include "ll_aton_cipher.h"
 
-#if LL_ATON_VERSION_MAJOR != 1 || LL_ATON_VERSION_MINOR != 1 || LL_ATON_VERSION_MICRO != 3 || LL_ATON_VERSION_DEV != 8
+#if LL_ATON_VERSION_MAJOR != 1 || LL_ATON_VERSION_MINOR != 1 || LL_ATON_VERSION_MICRO != 3 || LL_ATON_VERSION_DEV != 262
 #  error "Possible mismatch in ll_aton library used"
 #endif
 
@@ -64,7 +64,7 @@
 #endif
 
 /* global pool 8 is 105.98 KB */
-/* index=8 file postfix=xSPI2 name=octoFlash offset=0x70380000  absolute_mode size=63963128 READ_ONLY THROUGHPUT=MID LATENCY=HIGH byte width=1 freq ratio=6 burst max length=MAXINT burst penalty=0 pipelined=ON cacheable=ON read_power=110 write_power=400 use4initializers=YES score=50  */
+/* index=8 file postfix=xSPI2 name=octoFlash offset=0x70380000  absolute_mode size=16777208 READ_ONLY THROUGHPUT=MID LATENCY=HIGH byte width=1 freq ratio=6 burst max length=MAXINT burst penalty=0 pipelined=ON cacheable=ON read_power=110 write_power=400 use4initializers=YES score=50  */
 /* global pool 7 is ? */
 /* index=7 file postfix=xSPI1 name=hyperRAM offset=0x90000000  absolute_mode size=16777208 READ_WRITE THROUGHPUT=MID LATENCY=HIGH byte width=2 freq ratio=5 burst max length=MAXINT burst penalty=0 pipelined=ON cacheable=ON read_power=380 write_power=340 use4initializers=YES score=82  */
 /* global pool 1 is 416.00 KB */
@@ -105,6 +105,10 @@ const LL_Streng_EncryptionTypedef *LL_ATON_BlobEncryption_Info_network()
 
 LL_ATON_User_IO_Result_t LL_ATON_Set_User_Input_Buffer_network(uint32_t num, void* buffer, uint32_t size)
 {
+  LL_ATON_LIB_UNUSED(num);
+  LL_ATON_LIB_UNUSED(buffer);
+  LL_ATON_LIB_UNUSED(size);
+
   { 
     return LL_ATON_User_IO_WRONG_INDEX;
   }
@@ -112,6 +116,8 @@ LL_ATON_User_IO_Result_t LL_ATON_Set_User_Input_Buffer_network(uint32_t num, voi
 
 void *LL_ATON_Get_User_Input_Buffer_network(uint32_t num)
 {
+  LL_ATON_LIB_UNUSED(num);
+
   { 
     return NULL;
   }
@@ -119,6 +125,10 @@ void *LL_ATON_Get_User_Input_Buffer_network(uint32_t num)
 
 LL_ATON_User_IO_Result_t LL_ATON_Set_User_Output_Buffer_network(uint32_t num, void* buffer, uint32_t size)
 {
+  LL_ATON_LIB_UNUSED(num);
+  LL_ATON_LIB_UNUSED(buffer);
+  LL_ATON_LIB_UNUSED(size);
+
   { 
     return LL_ATON_User_IO_WRONG_INDEX;
   }
@@ -126,6 +136,8 @@ LL_ATON_User_IO_Result_t LL_ATON_Set_User_Output_Buffer_network(uint32_t num, vo
 
 void *LL_ATON_Get_User_Output_Buffer_network(uint32_t num)
 {
+  LL_ATON_LIB_UNUSED(num);
+
   { 
     return NULL;
   }
@@ -138,8 +150,9 @@ void *LL_ATON_Get_User_Output_Buffer_network(uint32_t num)
 // Epoch Controller Blob (name='_ec_blob_network_1') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_1') start function
-static void _ec_blob_cache_start_func_1(const void *epoch_block) {
+static void _ec_blob_cache_start_func_1(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -153,18 +166,16 @@ static void _ec_blob_cache_start_func_1(const void *epoch_block) {
 /* scheduling epoch=7    nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_7(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_7(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 2 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x34270000UL + 0))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x34270000UL + 98304))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x34270000UL + 0))) /* Equivalent hex address = 0x34270000UL */, 98304);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_22 */
@@ -208,7 +219,7 @@ static void LL_ATON_End_EpochBlock_7(const void *epoch_block)
 
   static const uint8_t Transpose_22_perm_to_use_array_in_7[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_22_target_pos_array_in_7[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_22_tensor_shape_in_7[0], Transpose_22_tensor_axes_offsets_in_7[0], &Transpose_22_tensor_shape_out_7[0], Transpose_22_tensor_axes_offsets_out_7[0], Transpose_22_target_pos_array_in_7, Transpose_22_perm_to_use_array_in_7, 0, 8);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_22_tensor_shape_in_7[0], Transpose_22_tensor_axes_offsets_in_7[0], &Transpose_22_tensor_shape_out_7[0], Transpose_22_tensor_axes_offsets_out_7[0], Transpose_22_target_pos_array_in_7, Transpose_22_perm_to_use_array_in_7, 0, 8, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 2 */
@@ -222,8 +233,9 @@ static void LL_ATON_End_EpochBlock_7(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_8') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_8') start function
-static void _ec_blob_cache_start_func_8(const void *epoch_block) {
+static void _ec_blob_cache_start_func_8(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -237,18 +249,16 @@ static void _ec_blob_cache_start_func_8(const void *epoch_block) {
 /* scheduling epoch=9    nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_9(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_9(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 114688))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 229376))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 114688))) /* Equivalent hex address = 0x342fc000UL */, 114688);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_24 */
@@ -292,7 +302,7 @@ static void LL_ATON_End_EpochBlock_9(const void *epoch_block)
 
   static const uint8_t Transpose_24_perm_to_use_array_in_9[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_24_target_pos_array_in_9[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_24_tensor_shape_in_9[0], Transpose_24_tensor_axes_offsets_in_9[0], &Transpose_24_tensor_shape_out_9[0], Transpose_24_tensor_axes_offsets_out_9[0], Transpose_24_target_pos_array_in_9, Transpose_24_perm_to_use_array_in_9, 6, 7);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_24_tensor_shape_in_9[0], Transpose_24_tensor_axes_offsets_in_9[0], &Transpose_24_tensor_shape_out_9[0], Transpose_24_tensor_axes_offsets_out_9[0], Transpose_24_target_pos_array_in_9, Transpose_24_perm_to_use_array_in_9, 6, 7, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -306,8 +316,9 @@ static void LL_ATON_End_EpochBlock_9(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_10') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_10') start function
-static void _ec_blob_cache_start_func_10(const void *epoch_block) {
+static void _ec_blob_cache_start_func_10(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -321,18 +332,16 @@ static void _ec_blob_cache_start_func_10(const void *epoch_block) {
 /* scheduling epoch=13   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_13(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_13(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 372736))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 401408))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 372736))) /* Equivalent hex address = 0x3433b000UL */, 28672);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_44 */
@@ -376,7 +385,7 @@ static void LL_ATON_End_EpochBlock_13(const void *epoch_block)
 
   static const uint8_t Transpose_44_perm_to_use_array_in_13[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_44_target_pos_array_in_13[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_44_tensor_shape_in_13[0], Transpose_44_tensor_axes_offsets_in_13[0], &Transpose_44_tensor_shape_out_13[0], Transpose_44_tensor_axes_offsets_out_13[0], Transpose_44_target_pos_array_in_13, Transpose_44_perm_to_use_array_in_13, 8, 4);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_44_tensor_shape_in_13[0], Transpose_44_tensor_axes_offsets_in_13[0], &Transpose_44_tensor_shape_out_13[0], Transpose_44_tensor_axes_offsets_out_13[0], Transpose_44_target_pos_array_in_13, Transpose_44_perm_to_use_array_in_13, 8, 4, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -390,8 +399,9 @@ static void LL_ATON_End_EpochBlock_13(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_14') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_14') start function
-static void _ec_blob_cache_start_func_14(const void *epoch_block) {
+static void _ec_blob_cache_start_func_14(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -405,18 +415,16 @@ static void _ec_blob_cache_start_func_14(const void *epoch_block) {
 /* scheduling epoch=15   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_15(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_15(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 65536))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 98304))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 65536))) /* Equivalent hex address = 0x342f0000UL */, 32768);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_46 */
@@ -460,7 +468,7 @@ static void LL_ATON_End_EpochBlock_15(const void *epoch_block)
 
   static const uint8_t Transpose_46_perm_to_use_array_in_15[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_46_target_pos_array_in_15[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_46_tensor_shape_in_15[0], Transpose_46_tensor_axes_offsets_in_15[0], &Transpose_46_tensor_shape_out_15[0], Transpose_46_tensor_axes_offsets_out_15[0], Transpose_46_target_pos_array_in_15, Transpose_46_perm_to_use_array_in_15, 7, 4);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_46_tensor_shape_in_15[0], Transpose_46_tensor_axes_offsets_in_15[0], &Transpose_46_tensor_shape_out_15[0], Transpose_46_tensor_axes_offsets_out_15[0], Transpose_46_target_pos_array_in_15, Transpose_46_perm_to_use_array_in_15, 7, 4, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -474,8 +482,9 @@ static void LL_ATON_End_EpochBlock_15(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_16') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_16') start function
-static void _ec_blob_cache_start_func_16(const void *epoch_block) {
+static void _ec_blob_cache_start_func_16(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -489,18 +498,16 @@ static void _ec_blob_cache_start_func_16(const void *epoch_block) {
 /* scheduling epoch=18   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_18(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_18(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 98304))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 131072))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 98304))) /* Equivalent hex address = 0x342f8000UL */, 32768);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_51 */
@@ -544,7 +551,7 @@ static void LL_ATON_End_EpochBlock_18(const void *epoch_block)
 
   static const uint8_t Transpose_51_perm_to_use_array_in_18[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_51_target_pos_array_in_18[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_51_tensor_shape_in_18[0], Transpose_51_tensor_axes_offsets_in_18[0], &Transpose_51_tensor_shape_out_18[0], Transpose_51_tensor_axes_offsets_out_18[0], Transpose_51_target_pos_array_in_18, Transpose_51_perm_to_use_array_in_18, 6, 9);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_51_tensor_shape_in_18[0], Transpose_51_tensor_axes_offsets_in_18[0], &Transpose_51_tensor_shape_out_18[0], Transpose_51_tensor_axes_offsets_out_18[0], Transpose_51_target_pos_array_in_18, Transpose_51_perm_to_use_array_in_18, 6, 9, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -558,8 +565,9 @@ static void LL_ATON_End_EpochBlock_18(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_19') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_19') start function
-static void _ec_blob_cache_start_func_19(const void *epoch_block) {
+static void _ec_blob_cache_start_func_19(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -573,18 +581,16 @@ static void _ec_blob_cache_start_func_19(const void *epoch_block) {
 /* scheduling epoch=20   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_20(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_20(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 36864))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 73728))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 36864))) /* Equivalent hex address = 0x342e9000UL */, 36864);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_53 */
@@ -628,7 +634,7 @@ static void LL_ATON_End_EpochBlock_20(const void *epoch_block)
 
   static const uint8_t Transpose_53_perm_to_use_array_in_20[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_53_target_pos_array_in_20[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_53_tensor_shape_in_20[0], Transpose_53_tensor_axes_offsets_in_20[0], &Transpose_53_tensor_shape_out_20[0], Transpose_53_tensor_axes_offsets_out_20[0], Transpose_53_target_pos_array_in_20, Transpose_53_perm_to_use_array_in_20, 3, 5);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_53_tensor_shape_in_20[0], Transpose_53_tensor_axes_offsets_in_20[0], &Transpose_53_tensor_shape_out_20[0], Transpose_53_tensor_axes_offsets_out_20[0], Transpose_53_target_pos_array_in_20, Transpose_53_perm_to_use_array_in_20, 3, 5, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -642,8 +648,9 @@ static void LL_ATON_End_EpochBlock_20(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_21') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_21') start function
-static void _ec_blob_cache_start_func_21(const void *epoch_block) {
+static void _ec_blob_cache_start_func_21(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -657,18 +664,16 @@ static void _ec_blob_cache_start_func_21(const void *epoch_block) {
 /* scheduling epoch=23   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_23(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_23(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 110592))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 147456))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 110592))) /* Equivalent hex address = 0x342fb000UL */, 36864);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_65 */
@@ -712,7 +717,7 @@ static void LL_ATON_End_EpochBlock_23(const void *epoch_block)
 
   static const uint8_t Transpose_65_perm_to_use_array_in_23[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_65_target_pos_array_in_23[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_65_tensor_shape_in_23[0], Transpose_65_tensor_axes_offsets_in_23[0], &Transpose_65_tensor_shape_out_23[0], Transpose_65_tensor_axes_offsets_out_23[0], Transpose_65_target_pos_array_in_23, Transpose_65_perm_to_use_array_in_23, 0, 1);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_65_tensor_shape_in_23[0], Transpose_65_tensor_axes_offsets_in_23[0], &Transpose_65_tensor_shape_out_23[0], Transpose_65_tensor_axes_offsets_out_23[0], Transpose_65_target_pos_array_in_23, Transpose_65_perm_to_use_array_in_23, 0, 1, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -726,8 +731,9 @@ static void LL_ATON_End_EpochBlock_23(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_24') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_24') start function
-static void _ec_blob_cache_start_func_24(const void *epoch_block) {
+static void _ec_blob_cache_start_func_24(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -741,18 +747,16 @@ static void _ec_blob_cache_start_func_24(const void *epoch_block) {
 /* scheduling epoch=25   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_25(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_25(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 43008))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 86016))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 43008))) /* Equivalent hex address = 0x342ea800UL */, 43008);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_67 */
@@ -796,7 +800,7 @@ static void LL_ATON_End_EpochBlock_25(const void *epoch_block)
 
   static const uint8_t Transpose_67_perm_to_use_array_in_25[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_67_target_pos_array_in_25[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_67_tensor_shape_in_25[0], Transpose_67_tensor_axes_offsets_in_25[0], &Transpose_67_tensor_shape_out_25[0], Transpose_67_tensor_axes_offsets_out_25[0], Transpose_67_target_pos_array_in_25, Transpose_67_perm_to_use_array_in_25, 7, 8);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_67_tensor_shape_in_25[0], Transpose_67_tensor_axes_offsets_in_25[0], &Transpose_67_tensor_shape_out_25[0], Transpose_67_tensor_axes_offsets_out_25[0], Transpose_67_target_pos_array_in_25, Transpose_67_perm_to_use_array_in_25, 7, 8, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -810,8 +814,9 @@ static void LL_ATON_End_EpochBlock_25(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_26') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_26') start function
-static void _ec_blob_cache_start_func_26(const void *epoch_block) {
+static void _ec_blob_cache_start_func_26(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -825,18 +830,16 @@ static void _ec_blob_cache_start_func_26(const void *epoch_block) {
 /* scheduling epoch=29   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_29(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_29(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 35328))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 46080))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 35328))) /* Equivalent hex address = 0x342e8a00UL */, 10752);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_87 */
@@ -880,7 +883,7 @@ static void LL_ATON_End_EpochBlock_29(const void *epoch_block)
 
   static const uint8_t Transpose_87_perm_to_use_array_in_29[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_87_target_pos_array_in_29[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_87_tensor_shape_in_29[0], Transpose_87_tensor_axes_offsets_in_29[0], &Transpose_87_tensor_shape_out_29[0], Transpose_87_tensor_axes_offsets_out_29[0], Transpose_87_target_pos_array_in_29, Transpose_87_perm_to_use_array_in_29, 5, 6);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_87_tensor_shape_in_29[0], Transpose_87_tensor_axes_offsets_in_29[0], &Transpose_87_tensor_shape_out_29[0], Transpose_87_tensor_axes_offsets_out_29[0], Transpose_87_target_pos_array_in_29, Transpose_87_perm_to_use_array_in_29, 5, 6, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -894,8 +897,9 @@ static void LL_ATON_End_EpochBlock_29(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_30') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_30') start function
-static void _ec_blob_cache_start_func_30(const void *epoch_block) {
+static void _ec_blob_cache_start_func_30(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -909,18 +913,16 @@ static void _ec_blob_cache_start_func_30(const void *epoch_block) {
 /* scheduling epoch=31   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_31(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_31(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 24576))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 36864))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 24576))) /* Equivalent hex address = 0x342e6000UL */, 12288);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_89 */
@@ -964,7 +966,7 @@ static void LL_ATON_End_EpochBlock_31(const void *epoch_block)
 
   static const uint8_t Transpose_89_perm_to_use_array_in_31[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_89_target_pos_array_in_31[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_89_tensor_shape_in_31[0], Transpose_89_tensor_axes_offsets_in_31[0], &Transpose_89_tensor_shape_out_31[0], Transpose_89_tensor_axes_offsets_out_31[0], Transpose_89_target_pos_array_in_31, Transpose_89_perm_to_use_array_in_31, 4, 5);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_89_tensor_shape_in_31[0], Transpose_89_tensor_axes_offsets_in_31[0], &Transpose_89_tensor_shape_out_31[0], Transpose_89_tensor_axes_offsets_out_31[0], Transpose_89_target_pos_array_in_31, Transpose_89_perm_to_use_array_in_31, 4, 5, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -978,8 +980,9 @@ static void LL_ATON_End_EpochBlock_31(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_32') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_32') start function
-static void _ec_blob_cache_start_func_32(const void *epoch_block) {
+static void _ec_blob_cache_start_func_32(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -993,18 +996,16 @@ static void _ec_blob_cache_start_func_32(const void *epoch_block) {
 /* scheduling epoch=34   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_34(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_34(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 36864))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 49152))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 36864))) /* Equivalent hex address = 0x342e9000UL */, 12288);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_94 */
@@ -1048,7 +1049,7 @@ static void LL_ATON_End_EpochBlock_34(const void *epoch_block)
 
   static const uint8_t Transpose_94_perm_to_use_array_in_34[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_94_target_pos_array_in_34[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_94_tensor_shape_in_34[0], Transpose_94_tensor_axes_offsets_in_34[0], &Transpose_94_tensor_shape_out_34[0], Transpose_94_tensor_axes_offsets_out_34[0], Transpose_94_target_pos_array_in_34, Transpose_94_perm_to_use_array_in_34, 8, 9);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_94_tensor_shape_in_34[0], Transpose_94_tensor_axes_offsets_in_34[0], &Transpose_94_tensor_shape_out_34[0], Transpose_94_tensor_axes_offsets_out_34[0], Transpose_94_target_pos_array_in_34, Transpose_94_perm_to_use_array_in_34, 8, 9, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1062,8 +1063,9 @@ static void LL_ATON_End_EpochBlock_34(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_35') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_35') start function
-static void _ec_blob_cache_start_func_35(const void *epoch_block) {
+static void _ec_blob_cache_start_func_35(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1077,18 +1079,16 @@ static void _ec_blob_cache_start_func_35(const void *epoch_block) {
 /* scheduling epoch=36   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_36(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_36(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 14336))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 28672))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 14336))) /* Equivalent hex address = 0x342e3800UL */, 14336);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_96 */
@@ -1132,7 +1132,7 @@ static void LL_ATON_End_EpochBlock_36(const void *epoch_block)
 
   static const uint8_t Transpose_96_perm_to_use_array_in_36[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_96_target_pos_array_in_36[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_96_tensor_shape_in_36[0], Transpose_96_tensor_axes_offsets_in_36[0], &Transpose_96_tensor_shape_out_36[0], Transpose_96_tensor_axes_offsets_out_36[0], Transpose_96_target_pos_array_in_36, Transpose_96_perm_to_use_array_in_36, 3, 7);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_96_tensor_shape_in_36[0], Transpose_96_tensor_axes_offsets_in_36[0], &Transpose_96_tensor_shape_out_36[0], Transpose_96_tensor_axes_offsets_out_36[0], Transpose_96_target_pos_array_in_36, Transpose_96_perm_to_use_array_in_36, 3, 7, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1146,8 +1146,9 @@ static void LL_ATON_End_EpochBlock_36(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_37') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_37') start function
-static void _ec_blob_cache_start_func_37(const void *epoch_block) {
+static void _ec_blob_cache_start_func_37(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1161,18 +1162,16 @@ static void _ec_blob_cache_start_func_37(const void *epoch_block) {
 /* scheduling epoch=39   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_39(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_39(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 43008))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 57344))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 43008))) /* Equivalent hex address = 0x342ea800UL */, 14336);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_108 */
@@ -1216,7 +1215,7 @@ static void LL_ATON_End_EpochBlock_39(const void *epoch_block)
 
   static const uint8_t Transpose_108_perm_to_use_array_in_39[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_108_target_pos_array_in_39[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_108_tensor_shape_in_39[0], Transpose_108_tensor_axes_offsets_in_39[0], &Transpose_108_tensor_shape_out_39[0], Transpose_108_tensor_axes_offsets_out_39[0], Transpose_108_target_pos_array_in_39, Transpose_108_perm_to_use_array_in_39, 7, 0);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_108_tensor_shape_in_39[0], Transpose_108_tensor_axes_offsets_in_39[0], &Transpose_108_tensor_shape_out_39[0], Transpose_108_tensor_axes_offsets_out_39[0], Transpose_108_target_pos_array_in_39, Transpose_108_perm_to_use_array_in_39, 7, 0, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1230,8 +1229,9 @@ static void LL_ATON_End_EpochBlock_39(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_40') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_40') start function
-static void _ec_blob_cache_start_func_40(const void *epoch_block) {
+static void _ec_blob_cache_start_func_40(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1245,18 +1245,16 @@ static void _ec_blob_cache_start_func_40(const void *epoch_block) {
 /* scheduling epoch=41   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_41(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_41(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 16384))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 32768))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 16384))) /* Equivalent hex address = 0x342e4000UL */, 16384);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_110 */
@@ -1300,7 +1298,7 @@ static void LL_ATON_End_EpochBlock_41(const void *epoch_block)
 
   static const uint8_t Transpose_110_perm_to_use_array_in_41[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_110_target_pos_array_in_41[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_110_tensor_shape_in_41[0], Transpose_110_tensor_axes_offsets_in_41[0], &Transpose_110_tensor_shape_out_41[0], Transpose_110_tensor_axes_offsets_out_41[0], Transpose_110_target_pos_array_in_41, Transpose_110_perm_to_use_array_in_41, 5, 6);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_110_tensor_shape_in_41[0], Transpose_110_tensor_axes_offsets_in_41[0], &Transpose_110_tensor_shape_out_41[0], Transpose_110_tensor_axes_offsets_out_41[0], Transpose_110_target_pos_array_in_41, Transpose_110_perm_to_use_array_in_41, 5, 6, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1314,8 +1312,9 @@ static void LL_ATON_End_EpochBlock_41(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_42') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_42') start function
-static void _ec_blob_cache_start_func_42(const void *epoch_block) {
+static void _ec_blob_cache_start_func_42(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1329,18 +1328,16 @@ static void _ec_blob_cache_start_func_42(const void *epoch_block) {
 /* scheduling epoch=44   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_44(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_44(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 49152))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 65536))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 49152))) /* Equivalent hex address = 0x342ec000UL */, 16384);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_122 */
@@ -1384,7 +1381,7 @@ static void LL_ATON_End_EpochBlock_44(const void *epoch_block)
 
   static const uint8_t Transpose_122_perm_to_use_array_in_44[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_122_target_pos_array_in_44[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_122_tensor_shape_in_44[0], Transpose_122_tensor_axes_offsets_in_44[0], &Transpose_122_tensor_shape_out_44[0], Transpose_122_tensor_axes_offsets_out_44[0], Transpose_122_target_pos_array_in_44, Transpose_122_perm_to_use_array_in_44, 2, 3);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_122_tensor_shape_in_44[0], Transpose_122_tensor_axes_offsets_in_44[0], &Transpose_122_tensor_shape_out_44[0], Transpose_122_tensor_axes_offsets_out_44[0], Transpose_122_target_pos_array_in_44, Transpose_122_perm_to_use_array_in_44, 2, 3, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1398,8 +1395,9 @@ static void LL_ATON_End_EpochBlock_44(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_45') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_45') start function
-static void _ec_blob_cache_start_func_45(const void *epoch_block) {
+static void _ec_blob_cache_start_func_45(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1413,18 +1411,16 @@ static void _ec_blob_cache_start_func_45(const void *epoch_block) {
 /* scheduling epoch=46   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_46(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_46(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 18432))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 36864))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 18432))) /* Equivalent hex address = 0x342e4800UL */, 18432);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_124 */
@@ -1468,7 +1464,7 @@ static void LL_ATON_End_EpochBlock_46(const void *epoch_block)
 
   static const uint8_t Transpose_124_perm_to_use_array_in_46[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_124_target_pos_array_in_46[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_124_tensor_shape_in_46[0], Transpose_124_tensor_axes_offsets_in_46[0], &Transpose_124_tensor_shape_out_46[0], Transpose_124_tensor_axes_offsets_out_46[0], Transpose_124_target_pos_array_in_46, Transpose_124_perm_to_use_array_in_46, 5, 6);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_124_tensor_shape_in_46[0], Transpose_124_tensor_axes_offsets_in_46[0], &Transpose_124_tensor_shape_out_46[0], Transpose_124_tensor_axes_offsets_out_46[0], Transpose_124_target_pos_array_in_46, Transpose_124_perm_to_use_array_in_46, 5, 6, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1482,8 +1478,9 @@ static void LL_ATON_End_EpochBlock_46(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_47') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_47') start function
-static void _ec_blob_cache_start_func_47(const void *epoch_block) {
+static void _ec_blob_cache_start_func_47(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1497,18 +1494,16 @@ static void _ec_blob_cache_start_func_47(const void *epoch_block) {
 /* scheduling epoch=49   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_49(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_49(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 55296))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 73728))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 55296))) /* Equivalent hex address = 0x342ed800UL */, 18432);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_136 */
@@ -1552,7 +1547,7 @@ static void LL_ATON_End_EpochBlock_49(const void *epoch_block)
 
   static const uint8_t Transpose_136_perm_to_use_array_in_49[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_136_target_pos_array_in_49[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_136_tensor_shape_in_49[0], Transpose_136_tensor_axes_offsets_in_49[0], &Transpose_136_tensor_shape_out_49[0], Transpose_136_tensor_axes_offsets_out_49[0], Transpose_136_target_pos_array_in_49, Transpose_136_perm_to_use_array_in_49, 2, 3);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_136_tensor_shape_in_49[0], Transpose_136_tensor_axes_offsets_in_49[0], &Transpose_136_tensor_shape_out_49[0], Transpose_136_tensor_axes_offsets_out_49[0], Transpose_136_target_pos_array_in_49, Transpose_136_perm_to_use_array_in_49, 2, 3, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1566,8 +1561,9 @@ static void LL_ATON_End_EpochBlock_49(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_50') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_50') start function
-static void _ec_blob_cache_start_func_50(const void *epoch_block) {
+static void _ec_blob_cache_start_func_50(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1581,18 +1577,16 @@ static void _ec_blob_cache_start_func_50(const void *epoch_block) {
 /* scheduling epoch=51   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_51(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_51(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 20480))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 40960))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 20480))) /* Equivalent hex address = 0x342e5000UL */, 20480);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_138 */
@@ -1636,7 +1630,7 @@ static void LL_ATON_End_EpochBlock_51(const void *epoch_block)
 
   static const uint8_t Transpose_138_perm_to_use_array_in_51[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_138_target_pos_array_in_51[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_138_tensor_shape_in_51[0], Transpose_138_tensor_axes_offsets_in_51[0], &Transpose_138_tensor_shape_out_51[0], Transpose_138_tensor_axes_offsets_out_51[0], Transpose_138_target_pos_array_in_51, Transpose_138_perm_to_use_array_in_51, 5, 6);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_138_tensor_shape_in_51[0], Transpose_138_tensor_axes_offsets_in_51[0], &Transpose_138_tensor_shape_out_51[0], Transpose_138_tensor_axes_offsets_out_51[0], Transpose_138_target_pos_array_in_51, Transpose_138_perm_to_use_array_in_51, 5, 6, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1650,8 +1644,9 @@ static void LL_ATON_End_EpochBlock_51(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_52') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_52') start function
-static void _ec_blob_cache_start_func_52(const void *epoch_block) {
+static void _ec_blob_cache_start_func_52(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1665,18 +1660,16 @@ static void _ec_blob_cache_start_func_52(const void *epoch_block) {
 /* scheduling epoch=54   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_54(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_54(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 81920))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 102400))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 81920))) /* Equivalent hex address = 0x342f4000UL */, 20480);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_150 */
@@ -1720,7 +1713,7 @@ static void LL_ATON_End_EpochBlock_54(const void *epoch_block)
 
   static const uint8_t Transpose_150_perm_to_use_array_in_54[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_150_target_pos_array_in_54[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_150_tensor_shape_in_54[0], Transpose_150_tensor_axes_offsets_in_54[0], &Transpose_150_tensor_shape_out_54[0], Transpose_150_tensor_axes_offsets_out_54[0], Transpose_150_target_pos_array_in_54, Transpose_150_perm_to_use_array_in_54, 1, 2);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_150_tensor_shape_in_54[0], Transpose_150_tensor_axes_offsets_in_54[0], &Transpose_150_tensor_shape_out_54[0], Transpose_150_tensor_axes_offsets_out_54[0], Transpose_150_target_pos_array_in_54, Transpose_150_perm_to_use_array_in_54, 1, 2, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1734,8 +1727,9 @@ static void LL_ATON_End_EpochBlock_54(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_55') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_55') start function
-static void _ec_blob_cache_start_func_55(const void *epoch_block) {
+static void _ec_blob_cache_start_func_55(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1749,18 +1743,16 @@ static void _ec_blob_cache_start_func_55(const void *epoch_block) {
 /* scheduling epoch=56   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_56(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_56(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 22528))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 45056))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 22528))) /* Equivalent hex address = 0x342e5800UL */, 22528);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_152 */
@@ -1804,7 +1796,7 @@ static void LL_ATON_End_EpochBlock_56(const void *epoch_block)
 
   static const uint8_t Transpose_152_perm_to_use_array_in_56[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_152_target_pos_array_in_56[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_152_tensor_shape_in_56[0], Transpose_152_tensor_axes_offsets_in_56[0], &Transpose_152_tensor_shape_out_56[0], Transpose_152_tensor_axes_offsets_out_56[0], Transpose_152_target_pos_array_in_56, Transpose_152_perm_to_use_array_in_56, 6, 9);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_152_tensor_shape_in_56[0], Transpose_152_tensor_axes_offsets_in_56[0], &Transpose_152_tensor_shape_out_56[0], Transpose_152_tensor_axes_offsets_out_56[0], Transpose_152_target_pos_array_in_56, Transpose_152_perm_to_use_array_in_56, 6, 9, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1818,8 +1810,9 @@ static void LL_ATON_End_EpochBlock_56(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_57') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_57') start function
-static void _ec_blob_cache_start_func_57(const void *epoch_block) {
+static void _ec_blob_cache_start_func_57(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1833,18 +1826,16 @@ static void _ec_blob_cache_start_func_57(const void *epoch_block) {
 /* scheduling epoch=60   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_60(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_60(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 67584))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 73216))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 67584))) /* Equivalent hex address = 0x342f0800UL */, 5632);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_172 */
@@ -1888,7 +1879,7 @@ static void LL_ATON_End_EpochBlock_60(const void *epoch_block)
 
   static const uint8_t Transpose_172_perm_to_use_array_in_60[] = { 0, 3, 2, 1 };
   static const uint8_t Transpose_172_target_pos_array_in_60[] = { 0, 3, 2, 1 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_172_tensor_shape_in_60[0], Transpose_172_tensor_axes_offsets_in_60[0], &Transpose_172_tensor_shape_out_60[0], Transpose_172_tensor_axes_offsets_out_60[0], Transpose_172_target_pos_array_in_60, Transpose_172_perm_to_use_array_in_60, 1, 2);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_172_tensor_shape_in_60[0], Transpose_172_tensor_axes_offsets_in_60[0], &Transpose_172_tensor_shape_out_60[0], Transpose_172_tensor_axes_offsets_out_60[0], Transpose_172_target_pos_array_in_60, Transpose_172_perm_to_use_array_in_60, 1, 2, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1902,8 +1893,9 @@ static void LL_ATON_End_EpochBlock_60(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_61') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_61') start function
-static void _ec_blob_cache_start_func_61(const void *epoch_block) {
+static void _ec_blob_cache_start_func_61(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -1923,18 +1915,16 @@ static void _ec_blob_cache_start_func_61(const void *epoch_block) {
 /* scheduling epoch=64   nodes=1   ------------------------------------------------------------------- */
 
 
-static void LL_ATON_End_EpochBlock_64(const void *epoch_block)
+static void LL_ATON_End_EpochBlock_64(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance)
 {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
   /*     start: ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 24576))) */
   /*     end:   ((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 30720))) */
   LL_ATON_Cache_MCU_Invalidate_Range(((uintptr_t)(ATON_LIB_PHYSICAL_TO_VIRTUAL_ADDR(0x342e0000UL + 24576))) /* Equivalent hex address = 0x342e6000UL */, 6144);
-
-  /* Reset the stream switch */
-  LL_Switch_Init(NULL, 0);
 
 /* Unit= 27 [PROCESSOR 0] */
 /* kind=Transpose node=Transpose_174 */
@@ -1978,7 +1968,7 @@ static void LL_ATON_End_EpochBlock_64(const void *epoch_block)
 
   static const uint8_t Transpose_174_perm_to_use_array_in_64[] = { 0, 2, 1, 3 };
   static const uint8_t Transpose_174_target_pos_array_in_64[] = { 0, 2, 1, 3 };
-  LL_ATON_LIB_DMA_Transpose(&Transpose_174_tensor_shape_in_64[0], Transpose_174_tensor_axes_offsets_in_64[0], &Transpose_174_tensor_shape_out_64[0], Transpose_174_tensor_axes_offsets_out_64[0], Transpose_174_target_pos_array_in_64, Transpose_174_perm_to_use_array_in_64, 9, 0);
+  LL_ATON_LIB_DMA_Transpose(&Transpose_174_tensor_shape_in_64[0], Transpose_174_tensor_axes_offsets_in_64[0], &Transpose_174_tensor_shape_out_64[0], Transpose_174_tensor_axes_offsets_out_64[0], Transpose_174_target_pos_array_in_64, Transpose_174_perm_to_use_array_in_64, 9, 0, nn_instance);
 
   /* *** MCU cache clean (only) operation (SW, whole range) *** */
   /*     memory pool: 1 */
@@ -1992,8 +1982,9 @@ static void LL_ATON_End_EpochBlock_64(const void *epoch_block)
 // Epoch Controller Blob (name='_ec_blob_network_65') micro instructions needed
 
 // Epoch Controller Blob (name='_ec_blob_network_65') start function
-static void _ec_blob_cache_start_func_65(const void *epoch_block) {
+static void _ec_blob_cache_start_func_65(const LL_ATON_RT_EpochBlockItem_t *epoch_block, const NN_Instance_TypeDef *nn_instance) {
   LL_ATON_LIB_UNUSED(epoch_block);
+  LL_ATON_LIB_UNUSED(nn_instance);
 
   /* *** MCU cache invalidate (only) operation (HW, whole range) *** */
   /*     memory pool: 1 */
@@ -2012,9 +2003,9 @@ static void _ec_blob_cache_start_func_65(const void *epoch_block) {
 
 /* scheduling DONE                 ------------------------------------------------------------------- */
 
-const EpochBlock_ItemTypeDef *LL_ATON_EpochBlockItems_network(void) {
+const LL_ATON_RT_EpochBlockItem_t *LL_ATON_EpochBlockItems_network(void) {
 
-  static const EpochBlock_ItemTypeDef ll_atonn_rt_epoch_block_array[] = {
+  static const LL_ATON_RT_EpochBlockItem_t ll_atonn_rt_epoch_block_array[] = {
     {
       .start_epoch_block = _ec_blob_cache_start_func_1,
       .end_epoch_block = NULL,
@@ -3723,7 +3714,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_7_weights_submask_0_0_3_0_24_3_2_5_359_quant_offset,
     },
     {
-      .name = "Pad_23_pad_kern_46",
+      .name = "Pad_23_pad_kern_92",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108256,
       .offset_end = 108320,
@@ -3744,7 +3735,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_64_1_1_1,
     },
     {
-      .name = "Pad_45_pad_kern_86",
+      .name = "Pad_45_pad_kern_172",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108320,
       .offset_end = 108352,
@@ -3765,7 +3756,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_32_1_1_1,
     },
     {
-      .name = "Pad_52_pad_kern_93",
+      .name = "Pad_52_pad_kern_186",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108352,
       .offset_end = 108384,
@@ -3786,7 +3777,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_32_1_1_1,
     },
     {
-      .name = "Pad_66_pad_kern_116",
+      .name = "Pad_66_pad_kern_232",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108384,
       .offset_end = 108416,
@@ -3807,7 +3798,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_32_1_1_1,
     },
     {
-      .name = "Pad_88_pad_kern_156",
+      .name = "Pad_88_pad_kern_312",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108416,
       .offset_end = 108432,
@@ -3828,7 +3819,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_16_1_1_1,
     },
     {
-      .name = "Pad_95_pad_kern_163",
+      .name = "Pad_95_pad_kern_326",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108432,
       .offset_end = 108448,
@@ -3849,7 +3840,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_16_1_1_1,
     },
     {
-      .name = "Pad_109_pad_kern_184",
+      .name = "Pad_109_pad_kern_368",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108448,
       .offset_end = 108464,
@@ -3870,7 +3861,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_16_1_1_1,
     },
     {
-      .name = "Pad_123_pad_kern_207",
+      .name = "Pad_123_pad_kern_414",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108464,
       .offset_end = 108480,
@@ -3891,7 +3882,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_16_1_1_1,
     },
     {
-      .name = "Pad_137_pad_kern_230",
+      .name = "Pad_137_pad_kern_460",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108480,
       .offset_end = 108496,
@@ -3912,7 +3903,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_16_1_1_1,
     },
     {
-      .name = "Pad_151_pad_kern_253",
+      .name = "Pad_151_pad_kern_506",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108496,
       .offset_end = 108512,
@@ -3933,7 +3924,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Input_Buffers_Info_network(void)
       .shape = buff_info__shape_16_1_1_1,
     },
     {
-      .name = "Pad_173_pad_kern_293",
+      .name = "Pad_173_pad_kern_586",
       .addr_base = {(unsigned char *)(0x70380000UL) /* Equivalent hex address = 0x70380000UL */},
       .offset_start = 108512,
       .offset_end = 108520,
@@ -4124,8 +4115,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Conv2D_29_off_bias_out_43_quant_scale[] = { 0.06427863240242 };
   static const int16_t buff_info_Conv2D_29_off_bias_out_43_quant_offset[] = { 30 };
   static const uint32_t buff_info__mem_shape_L_1_28_64_64[] = { 1, 64, 64, 28 };
-  static const float buff_info_Transpose_24_out_0_inserted_out439_quant_scale[] = { 0.0200754459947348 };
-  static const int16_t buff_info_Transpose_24_out_0_inserted_out439_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_24_out_0_inserted_out878_quant_scale[] = { 0.0200754459947348 };
+  static const int16_t buff_info_Transpose_24_out_0_inserted_out878_quant_offset[] = { -128 };
   static const float buff_info_Add_32_out_0_quant_scale[] = { 0.0243262350559235 };
   static const int16_t buff_info_Add_32_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_37_zero_off_out_46_quant_scale[] = { 0.0243262350559235 };
@@ -4148,8 +4139,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Transpose_46_out_0_quant_scale[] = { 0.0243262350559235 };
   static const int16_t buff_info_Transpose_46_out_0_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_L_1_32_32_32[] = { 1, 32, 32, 32 };
-  static const float buff_info_Transpose_46_out_0_inserted_out444_quant_scale[] = { 0.0243262350559235 };
-  static const int16_t buff_info_Transpose_46_out_0_inserted_out444_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_46_out_0_inserted_out888_quant_scale[] = { 0.0243262350559235 };
+  static const int16_t buff_info_Transpose_46_out_0_inserted_out888_quant_offset[] = { -128 };
   static const float buff_info_Add_47_out_0_quant_scale[] = { 0.0397368408739567 };
   static const int16_t buff_info_Add_47_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_55_zero_off_out_64_quant_scale[] = { 0.0397368408739567 };
@@ -4168,8 +4159,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Conv2D_58_off_bias_out_79_quant_scale[] = { 0.0679439753293991 };
   static const int16_t buff_info_Conv2D_58_off_bias_out_79_quant_offset[] = { 23 };
   static const uint32_t buff_info__mem_shape_L_1_36_32_32[] = { 1, 32, 32, 36 };
-  static const float buff_info_Transpose_53_out_0_inserted_out449_quant_scale[] = { 0.0397368408739567 };
-  static const int16_t buff_info_Transpose_53_out_0_inserted_out449_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_53_out_0_inserted_out898_quant_scale[] = { 0.0397368408739567 };
+  static const int16_t buff_info_Transpose_53_out_0_inserted_out898_quant_offset[] = { -128 };
   static const float buff_info_Add_61_out_0_quant_scale[] = { 0.0276320911943913 };
   static const int16_t buff_info_Add_61_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_69_zero_off_out_82_quant_scale[] = { 0.0276320911943913 };
@@ -4189,8 +4180,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Conv2D_72_off_bias_out_97_quant_scale[] = { 0.0554033257067204 };
   static const int16_t buff_info_Conv2D_72_off_bias_out_97_quant_offset[] = { 3 };
   static const uint32_t buff_info__mem_shape_L_1_42_32_32[] = { 1, 32, 32, 42 };
-  static const float buff_info_Transpose_67_out_0_inserted_out454_quant_scale[] = { 0.0276320911943913 };
-  static const int16_t buff_info_Transpose_67_out_0_inserted_out454_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_67_out_0_inserted_out908_quant_scale[] = { 0.0276320911943913 };
+  static const int16_t buff_info_Transpose_67_out_0_inserted_out908_quant_offset[] = { -128 };
   static const float buff_info_Add_75_out_0_quant_scale[] = { 0.0269579831510782 };
   static const int16_t buff_info_Add_75_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_80_zero_off_out_100_quant_scale[] = { 0.0269579831510782 };
@@ -4215,8 +4206,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Transpose_89_out_0_quant_scale[] = { 0.0269579831510782 };
   static const int16_t buff_info_Transpose_89_out_0_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_L_1_48_16_16[] = { 1, 16, 16, 48 };
-  static const float buff_info_Transpose_89_out_0_inserted_out459_quant_scale[] = { 0.0269579831510782 };
-  static const int16_t buff_info_Transpose_89_out_0_inserted_out459_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_89_out_0_inserted_out918_quant_scale[] = { 0.0269579831510782 };
+  static const int16_t buff_info_Transpose_89_out_0_inserted_out918_quant_offset[] = { -128 };
   static const float buff_info_Add_90_out_0_quant_scale[] = { 0.0372552536427975 };
   static const int16_t buff_info_Add_90_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_98_zero_off_out_118_quant_scale[] = { 0.0372552536427975 };
@@ -4233,8 +4224,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Transpose_96_out_0_quant_scale[] = { 0.0372552536427975 };
   static const int16_t buff_info_Transpose_96_out_0_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_L_1_56_16_16[] = { 1, 16, 16, 56 };
-  static const float buff_info_Transpose_96_out_0_inserted_out463_quant_scale[] = { 0.0372552536427975 };
-  static const int16_t buff_info_Transpose_96_out_0_inserted_out463_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_96_out_0_inserted_out926_quant_scale[] = { 0.0372552536427975 };
+  static const int16_t buff_info_Transpose_96_out_0_inserted_out926_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_M14_1_56_16_16[] = { 1, 4, 16, 16, 14 };
   static const float buff_info_Conv2D_101_off_bias_out_130_quant_scale[] = { 0.0712688341736794 };
   static const int16_t buff_info_Conv2D_101_off_bias_out_130_quant_offset[] = { -21 };
@@ -4254,8 +4245,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Transpose_110_out_0_quant_scale[] = { 0.0415017157793045 };
   static const int16_t buff_info_Transpose_110_out_0_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_L_1_64_16_16[] = { 1, 16, 16, 64 };
-  static const float buff_info_Transpose_110_out_0_inserted_out470_quant_scale[] = { 0.0415017157793045 };
-  static const int16_t buff_info_Transpose_110_out_0_inserted_out470_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_110_out_0_inserted_out940_quant_scale[] = { 0.0415017157793045 };
+  static const int16_t buff_info_Transpose_110_out_0_inserted_out940_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_M16_1_64_16_16[] = { 1, 4, 16, 16, 16 };
   static const float buff_info_Conv2D_115_off_bias_out_148_quant_scale[] = { 0.0881709307432175 };
   static const int16_t buff_info_Conv2D_115_off_bias_out_148_quant_offset[] = { 4 };
@@ -4275,8 +4266,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Transpose_124_out_0_quant_scale[] = { 0.0424482710659504 };
   static const int16_t buff_info_Transpose_124_out_0_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_L_1_72_16_16[] = { 1, 16, 16, 72 };
-  static const float buff_info_Transpose_124_out_0_inserted_out477_quant_scale[] = { 0.0424482710659504 };
-  static const int16_t buff_info_Transpose_124_out_0_inserted_out477_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_124_out_0_inserted_out954_quant_scale[] = { 0.0424482710659504 };
+  static const int16_t buff_info_Transpose_124_out_0_inserted_out954_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_M24_1_72_16_16[] = { 1, 3, 16, 16, 24 };
   static const float buff_info_Conv2D_129_off_bias_out_166_quant_scale[] = { 0.0689409300684929 };
   static const int16_t buff_info_Conv2D_129_off_bias_out_166_quant_offset[] = { 14 };
@@ -4296,8 +4287,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Transpose_138_out_0_quant_scale[] = { 0.0304187368601561 };
   static const int16_t buff_info_Transpose_138_out_0_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_L_1_80_16_16[] = { 1, 16, 16, 80 };
-  static const float buff_info_Transpose_138_out_0_inserted_out483_quant_scale[] = { 0.0304187368601561 };
-  static const int16_t buff_info_Transpose_138_out_0_inserted_out483_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_138_out_0_inserted_out966_quant_scale[] = { 0.0304187368601561 };
+  static const int16_t buff_info_Transpose_138_out_0_inserted_out966_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_M20_1_80_16_16[] = { 1, 4, 16, 16, 20 };
   static const float buff_info_Conv2D_143_off_bias_out_184_quant_scale[] = { 0.0814998671412468 };
   static const int16_t buff_info_Conv2D_143_off_bias_out_184_quant_offset[] = { 12 };
@@ -4320,8 +4311,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Conv2D_157_off_bias_out_202_quant_scale[] = { 0.0714662149548531 };
   static const int16_t buff_info_Conv2D_157_off_bias_out_202_quant_offset[] = { 34 };
   static const uint32_t buff_info__mem_shape_L_1_88_16_16[] = { 1, 16, 16, 88 };
-  static const float buff_info_Transpose_152_out_0_inserted_out490_quant_scale[] = { 0.036800492554903 };
-  static const int16_t buff_info_Transpose_152_out_0_inserted_out490_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_152_out_0_inserted_out980_quant_scale[] = { 0.036800492554903 };
+  static const int16_t buff_info_Transpose_152_out_0_inserted_out980_quant_offset[] = { -128 };
   static const float buff_info_Add_160_out_0_quant_scale[] = { 0.0260655228048563 };
   static const int16_t buff_info_Add_160_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_165_zero_off_out_205_quant_scale[] = { 0.0260655228048563 };
@@ -4360,8 +4351,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const float buff_info_Conv2D_168_off_bias_out_220_quant_scale[] = { 0.0591815412044525 };
   static const int16_t buff_info_Conv2D_168_off_bias_out_220_quant_offset[] = { 6 };
   static const uint32_t buff_info__mem_shape_L_1_96_8_8[] = { 1, 8, 8, 96 };
-  static const float buff_info_Transpose_174_out_0_inserted_out506_quant_scale[] = { 0.0260655228048563 };
-  static const int16_t buff_info_Transpose_174_out_0_inserted_out506_quant_offset[] = { -128 };
+  static const float buff_info_Transpose_174_out_0_inserted_out1012_quant_scale[] = { 0.0260655228048563 };
+  static const int16_t buff_info_Transpose_174_out_0_inserted_out1012_quant_offset[] = { -128 };
   static const uint32_t buff_info__mem_shape_L_1_32_16_16[] = { 1, 16, 16, 32 };
   static const float buff_info_Conv2D_239_off_bias_out_319_quant_scale[] = { 0.306708127260208 };
   static const int16_t buff_info_Conv2D_239_off_bias_out_319_quant_offset[] = { -47 };
@@ -4371,28 +4362,28 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const int16_t buff_info_Transpose_242_out_0_quant_offset[] = { -47 };
   static const uint32_t buff_info__shape_1_512_16_1[] = { 1, 16, 1, 512 };
   static const uint32_t buff_info__mem_shape_F_1_512_16_1[] = { 1, 512, 16, 1 };
-  static const float buff_info_Reshape_243_out_0_inserted_out503_quant_scale[] = { 0.306708127260208 };
-  static const int16_t buff_info_Reshape_243_out_0_inserted_out503_quant_offset[] = { -47 };
+  static const float buff_info_Reshape_243_out_0_inserted_out1006_quant_scale[] = { 0.306708127260208 };
+  static const int16_t buff_info_Reshape_243_out_0_inserted_out1006_quant_offset[] = { -47 };
   static const float buff_info_Add_175_out_0_quant_scale[] = { 0.0281831510365009 };
   static const int16_t buff_info_Add_175_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_180_zero_off_out_223_quant_scale[] = { 0.0281831510365009 };
   static const int16_t buff_info_Conv2D_180_zero_off_out_223_quant_offset[] = { 0 };
   static const uint32_t buff_info__mem_shape_L_1_512_16_1[] = { 1, 16, 1, 512 };
-  static const float buff_info_Reshape_243_out_0_inserted_out503_inserted_out505_quant_scale[] = { 0.306708127260208 };
-  static const int16_t buff_info_Reshape_243_out_0_inserted_out503_inserted_out505_quant_offset[] = { -47 };
+  static const float buff_info_Reshape_243_out_0_inserted_out1006_inserted_out1010_quant_scale[] = { 0.306708127260208 };
+  static const int16_t buff_info_Reshape_243_out_0_inserted_out1006_inserted_out1010_quant_offset[] = { -47 };
   static const uint32_t buff_info__shape_1_16_1_512[] = { 1, 1, 512, 16 };
   static const uint32_t buff_info__mem_shape_F_1_16_1_512[] = { 1, 16, 1, 512 };
   static const float buff_info_Transpose_244_out_0_quant_scale[] = { 0.306708127260208 };
   static const int16_t buff_info_Transpose_244_out_0_quant_offset[] = { -47 };
   static const uint32_t buff_info__shape_1_16_512_1[] = { 1, 512, 1, 16 };
   static const uint32_t buff_info__mem_shape_F_1_16_512_1[] = { 1, 16, 512, 1 };
-  static const float buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_quant_scale[] = { 0.306708127260208 };
-  static const int16_t buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_quant_offset[] = { -47 };
+  static const float buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_quant_scale[] = { 0.306708127260208 };
+  static const int16_t buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_quant_offset[] = { -47 };
   static const float buff_info_Conv2D_180_off_bias_out_229_quant_scale[] = { 0.25239896774292 };
   static const int16_t buff_info_Conv2D_180_off_bias_out_229_quant_offset[] = { -3 };
   static const uint32_t buff_info__mem_shape_L_1_16_512_1[] = { 1, 512, 1, 16 };
-  static const float buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_inserted_out509_quant_scale[] = { 0.306708127260208 };
-  static const int16_t buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_inserted_out509_quant_offset[] = { -47 };
+  static const float buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_inserted_out1018_quant_scale[] = { 0.306708127260208 };
+  static const int16_t buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_inserted_out1018_quant_offset[] = { -47 };
   static const float buff_info_Add_186_out_0_quant_scale[] = { 0.0298720635473728 };
   static const int16_t buff_info_Add_186_out_0_quant_offset[] = { -128 };
   static const float buff_info_Conv2D_191_zero_off_out_241_quant_scale[] = { 0.0298720635473728 };
@@ -4435,22 +4426,22 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
   static const int16_t buff_info_Transpose_226_out_0_quant_offset[] = { -47 };
   static const uint32_t buff_info__shape_1_384_16_1[] = { 1, 16, 1, 384 };
   static const uint32_t buff_info__mem_shape_F_1_384_16_1[] = { 1, 384, 16, 1 };
-  static const float buff_info_Reshape_227_out_0_inserted_out525_quant_scale[] = { 1.20201289653778 };
-  static const int16_t buff_info_Reshape_227_out_0_inserted_out525_quant_offset[] = { -47 };
+  static const float buff_info_Reshape_227_out_0_inserted_out1050_quant_scale[] = { 1.20201289653778 };
+  static const int16_t buff_info_Reshape_227_out_0_inserted_out1050_quant_offset[] = { -47 };
   static const uint32_t buff_info__mem_shape_L_1_384_16_1[] = { 1, 16, 1, 384 };
-  static const float buff_info_Reshape_227_out_0_inserted_out525_inserted_out527_quant_scale[] = { 1.20201289653778 };
-  static const int16_t buff_info_Reshape_227_out_0_inserted_out525_inserted_out527_quant_offset[] = { -47 };
+  static const float buff_info_Reshape_227_out_0_inserted_out1050_inserted_out1054_quant_scale[] = { 1.20201289653778 };
+  static const int16_t buff_info_Reshape_227_out_0_inserted_out1050_inserted_out1054_quant_offset[] = { -47 };
   static const uint32_t buff_info__shape_1_16_1_384[] = { 1, 1, 384, 16 };
   static const uint32_t buff_info__mem_shape_F_1_16_1_384[] = { 1, 16, 1, 384 };
   static const float buff_info_Transpose_228_out_0_quant_scale[] = { 1.20201289653778 };
   static const int16_t buff_info_Transpose_228_out_0_quant_offset[] = { -47 };
   static const uint32_t buff_info__shape_1_16_384_1[] = { 1, 384, 1, 16 };
   static const uint32_t buff_info__mem_shape_F_1_16_384_1[] = { 1, 16, 384, 1 };
-  static const float buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_quant_scale[] = { 1.20201289653778 };
-  static const int16_t buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_quant_offset[] = { -47 };
+  static const float buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_quant_scale[] = { 1.20201289653778 };
+  static const int16_t buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_quant_offset[] = { -47 };
   static const uint32_t buff_info__mem_shape_L_1_16_384_1[] = { 1, 384, 1, 16 };
-  static const float buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_inserted_out530_quant_scale[] = { 1.20201289653778 };
-  static const int16_t buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_inserted_out530_quant_offset[] = { -47 };
+  static const float buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_inserted_out1060_quant_scale[] = { 1.20201289653778 };
+  static const int16_t buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_inserted_out1060_quant_offset[] = { -47 };
   static const uint32_t buff_info__shape_1_384_1_16[] = { 1, 1, 16, 384 };
   static const uint32_t buff_info__mem_shape_F_1_384_1_16[] = { 1, 384, 1, 16 };
   static const float buff_info_Transpose_230_out_0_cp_in_162_quant_scale[] = { 1.20201289653778 };
@@ -4766,7 +4757,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_29_off_bias_out_43_quant_offset,
     },
     {
-      .name = "Transpose_24_out_0_inserted_out439",
+      .name = "Transpose_24_out_0_inserted_out878",
       .addr_base = {(unsigned char *)(0x34270000UL) /* Equivalent hex address = 0x34270000UL */},
       .offset_start = 0,
       .offset_end = 114688,
@@ -4786,8 +4777,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_28_64_64,
       .per_channel = 0,
-      .scale = buff_info_Transpose_24_out_0_inserted_out439_quant_scale,
-      .offset = buff_info_Transpose_24_out_0_inserted_out439_quant_offset,
+      .scale = buff_info_Transpose_24_out_0_inserted_out878_quant_scale,
+      .offset = buff_info_Transpose_24_out_0_inserted_out878_quant_offset,
     },
     {
       .name = "Add_32_out_0",
@@ -4979,7 +4970,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_46_out_0_quant_offset,
     },
     {
-      .name = "Transpose_46_out_0_inserted_out444",
+      .name = "Transpose_46_out_0_inserted_out888",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 98304,
       .offset_end = 131072,
@@ -4999,8 +4990,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_32_32_32,
       .per_channel = 0,
-      .scale = buff_info_Transpose_46_out_0_inserted_out444_quant_scale,
-      .offset = buff_info_Transpose_46_out_0_inserted_out444_quant_offset,
+      .scale = buff_info_Transpose_46_out_0_inserted_out888_quant_scale,
+      .offset = buff_info_Transpose_46_out_0_inserted_out888_quant_offset,
     },
     {
       .name = "Add_47_out_0",
@@ -5168,7 +5159,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_58_off_bias_out_79_quant_offset,
     },
     {
-      .name = "Transpose_53_out_0_inserted_out449",
+      .name = "Transpose_53_out_0_inserted_out898",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 110592,
       .offset_end = 147456,
@@ -5188,8 +5179,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_36_32_32,
       .per_channel = 0,
-      .scale = buff_info_Transpose_53_out_0_inserted_out449_quant_scale,
-      .offset = buff_info_Transpose_53_out_0_inserted_out449_quant_offset,
+      .scale = buff_info_Transpose_53_out_0_inserted_out898_quant_scale,
+      .offset = buff_info_Transpose_53_out_0_inserted_out898_quant_offset,
     },
     {
       .name = "Add_61_out_0",
@@ -5357,7 +5348,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_72_off_bias_out_97_quant_offset,
     },
     {
-      .name = "Transpose_67_out_0_inserted_out454",
+      .name = "Transpose_67_out_0_inserted_out908",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 129024,
       .offset_end = 172032,
@@ -5377,8 +5368,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_42_32_32,
       .per_channel = 0,
-      .scale = buff_info_Transpose_67_out_0_inserted_out454_quant_scale,
-      .offset = buff_info_Transpose_67_out_0_inserted_out454_quant_offset,
+      .scale = buff_info_Transpose_67_out_0_inserted_out908_quant_scale,
+      .offset = buff_info_Transpose_67_out_0_inserted_out908_quant_offset,
     },
     {
       .name = "Add_75_out_0",
@@ -5570,7 +5561,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_89_out_0_quant_offset,
     },
     {
-      .name = "Transpose_89_out_0_inserted_out459",
+      .name = "Transpose_89_out_0_inserted_out918",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 36864,
       .offset_end = 49152,
@@ -5590,8 +5581,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_48_16_16,
       .per_channel = 0,
-      .scale = buff_info_Transpose_89_out_0_inserted_out459_quant_scale,
-      .offset = buff_info_Transpose_89_out_0_inserted_out459_quant_offset,
+      .scale = buff_info_Transpose_89_out_0_inserted_out918_quant_scale,
+      .offset = buff_info_Transpose_89_out_0_inserted_out918_quant_offset,
     },
     {
       .name = "Add_90_out_0",
@@ -5735,7 +5726,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_96_out_0_quant_offset,
     },
     {
-      .name = "Transpose_96_out_0_inserted_out463",
+      .name = "Transpose_96_out_0_inserted_out926",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 43008,
       .offset_end = 57344,
@@ -5755,8 +5746,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_56_16_16,
       .per_channel = 0,
-      .scale = buff_info_Transpose_96_out_0_inserted_out463_quant_scale,
-      .offset = buff_info_Transpose_96_out_0_inserted_out463_quant_offset,
+      .scale = buff_info_Transpose_96_out_0_inserted_out926_quant_scale,
+      .offset = buff_info_Transpose_96_out_0_inserted_out926_quant_offset,
     },
     {
       .name = "Conv2D_101_off_bias_out_130",
@@ -5924,7 +5915,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_110_out_0_quant_offset,
     },
     {
-      .name = "Transpose_110_out_0_inserted_out470",
+      .name = "Transpose_110_out_0_inserted_out940",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 49152,
       .offset_end = 65536,
@@ -5944,8 +5935,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_64_16_16,
       .per_channel = 0,
-      .scale = buff_info_Transpose_110_out_0_inserted_out470_quant_scale,
-      .offset = buff_info_Transpose_110_out_0_inserted_out470_quant_offset,
+      .scale = buff_info_Transpose_110_out_0_inserted_out940_quant_scale,
+      .offset = buff_info_Transpose_110_out_0_inserted_out940_quant_offset,
     },
     {
       .name = "Conv2D_115_off_bias_out_148",
@@ -6113,7 +6104,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_124_out_0_quant_offset,
     },
     {
-      .name = "Transpose_124_out_0_inserted_out477",
+      .name = "Transpose_124_out_0_inserted_out954",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 55296,
       .offset_end = 73728,
@@ -6133,8 +6124,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_72_16_16,
       .per_channel = 0,
-      .scale = buff_info_Transpose_124_out_0_inserted_out477_quant_scale,
-      .offset = buff_info_Transpose_124_out_0_inserted_out477_quant_offset,
+      .scale = buff_info_Transpose_124_out_0_inserted_out954_quant_scale,
+      .offset = buff_info_Transpose_124_out_0_inserted_out954_quant_offset,
     },
     {
       .name = "Conv2D_129_off_bias_out_166",
@@ -6302,7 +6293,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_138_out_0_quant_offset,
     },
     {
-      .name = "Transpose_138_out_0_inserted_out483",
+      .name = "Transpose_138_out_0_inserted_out966",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 61440,
       .offset_end = 81920,
@@ -6322,8 +6313,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_80_16_16,
       .per_channel = 0,
-      .scale = buff_info_Transpose_138_out_0_inserted_out483_quant_scale,
-      .offset = buff_info_Transpose_138_out_0_inserted_out483_quant_offset,
+      .scale = buff_info_Transpose_138_out_0_inserted_out966_quant_scale,
+      .offset = buff_info_Transpose_138_out_0_inserted_out966_quant_offset,
     },
     {
       .name = "Conv2D_143_off_bias_out_184",
@@ -6515,7 +6506,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_157_off_bias_out_202_quant_offset,
     },
     {
-      .name = "Transpose_152_out_0_inserted_out490",
+      .name = "Transpose_152_out_0_inserted_out980",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 112640,
       .offset_end = 135168,
@@ -6535,8 +6526,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_88_16_16,
       .per_channel = 0,
-      .scale = buff_info_Transpose_152_out_0_inserted_out490_quant_scale,
-      .offset = buff_info_Transpose_152_out_0_inserted_out490_quant_offset,
+      .scale = buff_info_Transpose_152_out_0_inserted_out980_quant_scale,
+      .offset = buff_info_Transpose_152_out_0_inserted_out980_quant_offset,
     },
     {
       .name = "Add_160_out_0",
@@ -6845,7 +6836,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_168_off_bias_out_220_quant_offset,
     },
     {
-      .name = "Transpose_174_out_0_inserted_out506",
+      .name = "Transpose_174_out_0_inserted_out1012",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 36864,
       .offset_end = 43008,
@@ -6865,8 +6856,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_96_8_8,
       .per_channel = 0,
-      .scale = buff_info_Transpose_174_out_0_inserted_out506_quant_scale,
-      .offset = buff_info_Transpose_174_out_0_inserted_out506_quant_offset,
+      .scale = buff_info_Transpose_174_out_0_inserted_out1012_quant_scale,
+      .offset = buff_info_Transpose_174_out_0_inserted_out1012_quant_offset,
     },
     {
       .name = "Conv2D_239_off_bias_out_319",
@@ -6917,7 +6908,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_242_out_0_quant_offset,
     },
     {
-      .name = "Reshape_243_out_0_inserted_out503",
+      .name = "Reshape_243_out_0_inserted_out1006",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 16384,
       .offset_end = 24576,
@@ -6937,8 +6928,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_512_16_1,
       .per_channel = 0,
-      .scale = buff_info_Reshape_243_out_0_inserted_out503_quant_scale,
-      .offset = buff_info_Reshape_243_out_0_inserted_out503_quant_offset,
+      .scale = buff_info_Reshape_243_out_0_inserted_out1006_quant_scale,
+      .offset = buff_info_Reshape_243_out_0_inserted_out1006_quant_offset,
     },
     {
       .name = "Add_175_out_0",
@@ -6989,7 +6980,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_180_zero_off_out_223_quant_offset,
     },
     {
-      .name = "Reshape_243_out_0_inserted_out503_inserted_out505",
+      .name = "Reshape_243_out_0_inserted_out1006_inserted_out1010",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 8192,
       .offset_end = 16384,
@@ -7009,8 +7000,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_512_16_1,
       .per_channel = 0,
-      .scale = buff_info_Reshape_243_out_0_inserted_out503_inserted_out505_quant_scale,
-      .offset = buff_info_Reshape_243_out_0_inserted_out503_inserted_out505_quant_offset,
+      .scale = buff_info_Reshape_243_out_0_inserted_out1006_inserted_out1010_quant_scale,
+      .offset = buff_info_Reshape_243_out_0_inserted_out1006_inserted_out1010_quant_offset,
     },
     {
       .name = "Transpose_244_out_0",
@@ -7037,7 +7028,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_244_out_0_quant_offset,
     },
     {
-      .name = "Transpose_244_out_0_cp_in_144_inserted_out507",
+      .name = "Transpose_244_out_0_cp_in_144_inserted_out1014",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 8192,
       .offset_end = 16384,
@@ -7057,8 +7048,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_16_512_1,
       .per_channel = 0,
-      .scale = buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_quant_scale,
-      .offset = buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_quant_offset,
+      .scale = buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_quant_scale,
+      .offset = buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_quant_offset,
     },
     {
       .name = "Conv2D_180_off_bias_out_229",
@@ -7085,7 +7076,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Conv2D_180_off_bias_out_229_quant_offset,
     },
     {
-      .name = "Transpose_244_out_0_cp_in_144_inserted_out507_inserted_out509",
+      .name = "Transpose_244_out_0_cp_in_144_inserted_out1014_inserted_out1018",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 0,
       .offset_end = 8192,
@@ -7105,8 +7096,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_16_512_1,
       .per_channel = 0,
-      .scale = buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_inserted_out509_quant_scale,
-      .offset = buff_info_Transpose_244_out_0_cp_in_144_inserted_out507_inserted_out509_quant_offset,
+      .scale = buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_inserted_out1018_quant_scale,
+      .offset = buff_info_Transpose_244_out_0_cp_in_144_inserted_out1014_inserted_out1018_quant_offset,
     },
     {
       .name = "Add_186_out_0",
@@ -7493,7 +7484,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_226_out_0_quant_offset,
     },
     {
-      .name = "Reshape_227_out_0_inserted_out525",
+      .name = "Reshape_227_out_0_inserted_out1050",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 8192,
       .offset_end = 14336,
@@ -7513,11 +7504,11 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_384_16_1,
       .per_channel = 0,
-      .scale = buff_info_Reshape_227_out_0_inserted_out525_quant_scale,
-      .offset = buff_info_Reshape_227_out_0_inserted_out525_quant_offset,
+      .scale = buff_info_Reshape_227_out_0_inserted_out1050_quant_scale,
+      .offset = buff_info_Reshape_227_out_0_inserted_out1050_quant_offset,
     },
     {
-      .name = "Reshape_227_out_0_inserted_out525_inserted_out527",
+      .name = "Reshape_227_out_0_inserted_out1050_inserted_out1054",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 14336,
       .offset_end = 20480,
@@ -7537,8 +7528,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_384_16_1,
       .per_channel = 0,
-      .scale = buff_info_Reshape_227_out_0_inserted_out525_inserted_out527_quant_scale,
-      .offset = buff_info_Reshape_227_out_0_inserted_out525_inserted_out527_quant_offset,
+      .scale = buff_info_Reshape_227_out_0_inserted_out1050_inserted_out1054_quant_scale,
+      .offset = buff_info_Reshape_227_out_0_inserted_out1050_inserted_out1054_quant_offset,
     },
     {
       .name = "Transpose_228_out_0",
@@ -7565,7 +7556,7 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .offset = buff_info_Transpose_228_out_0_quant_offset,
     },
     {
-      .name = "Transpose_228_out_0_cp_in_161_inserted_out528",
+      .name = "Transpose_228_out_0_cp_in_161_inserted_out1056",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 14336,
       .offset_end = 20480,
@@ -7585,11 +7576,11 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_16_384_1,
       .per_channel = 0,
-      .scale = buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_quant_scale,
-      .offset = buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_quant_offset,
+      .scale = buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_quant_scale,
+      .offset = buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_quant_offset,
     },
     {
-      .name = "Transpose_228_out_0_cp_in_161_inserted_out528_inserted_out530",
+      .name = "Transpose_228_out_0_cp_in_161_inserted_out1056_inserted_out1060",
       .addr_base = {(unsigned char *)(0x342e0000UL) /* Equivalent hex address = 0x342e0000UL */},
       .offset_start = 8192,
       .offset_end = 14336,
@@ -7609,8 +7600,8 @@ const LL_Buffer_InfoTypeDef *LL_ATON_Internal_Buffers_Info_network(void)
       .ndims = 4,
       .shape = buff_info__shape_1_16_384_1,
       .per_channel = 0,
-      .scale = buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_inserted_out530_quant_scale,
-      .offset = buff_info_Transpose_228_out_0_cp_in_161_inserted_out528_inserted_out530_quant_offset,
+      .scale = buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_inserted_out1060_quant_scale,
+      .offset = buff_info_Transpose_228_out_0_cp_in_161_inserted_out1056_inserted_out1060_quant_offset,
     },
     {
       .name = "Transpose_230_out_0_cp_in_162",
